@@ -1,0 +1,44 @@
+% chapters/chapter1.tex
+\chapter{相对论量子力学}
+
+本书的观点是：量子场论之所以是现在的样子，是因为（在一定限定条件下）它是调和量子力学与狭义相对论的唯一途径。因此，我们的首要任务是研究洛伦兹不变性这类对称性如何在量子框架中呈现。
+
+\section{量子力学}
+\label{sec:QM}
+
+首先，有个好消息：量子场论建立在薛定谔、海森堡、泡利、玻恩等人于1925–1926年创立的同一套量子力学基础之上，这套理论自诞生以来便一直应用于原子物理、分子物理、核物理与凝聚态物理领域。
+本书假定读者已熟悉量子力学；本节仅以狄拉克的广义形式，对量子力学做最简要的概述。
+
+\begin{enumerate}
+    \item[(i)] 物理状态由希尔伯特空间中的\textbf{射线}表示。希尔伯特空间是一种复向量空间；也就是说，如果 $\ket{\Phi}$ 和 $\ket{\Psi}$ 是该空间中的向量（通常称为“态矢”），那么对于任意的复数 $\xi, \eta$，$\xi\ket{\Phi}+\eta\ket{\Psi}$ 也是该空间中的向量。它定义了一个内积（或称范数*）：对于任意一对向量，存在一个复数 $\braket{\Phi | \Psi}$，满足：
+        \begin{align}
+            \braket{\Phi | \Psi} &= \braket{\Psi | \Phi}^{*}, \tag{2.1.1} \\
+            \bra{\Phi} (\xi_1\ket{\Psi_1} + \xi_2\ket{\Psi_2}) &= \xi_1\braket{\Phi | \Psi_1} + \xi_2\braket{\Phi | \Psi_2}, \tag{2.1.2} \\
+            (\eta_1\bra{\Phi_1} + \eta_2\bra{\Phi_2}) \ket{\Psi} &= \eta_1^{*}\braket{\Phi_1 | \Psi} + \eta_2^{*}\braket{\Phi_2 | \Psi}. \tag{2.1.3}
+        \end{align}
+        范数 $\braket{\Psi | \Psi}$ 还满足正定性条件：$\braket{\Psi | \Psi} \geq 0$，且当且仅当 $\ket{\Psi} = 0$ 时为零。（此外还有一些技术性假设，允许我们在希尔伯特空间中对向量取极限。）一条射线是一个归一化向量（即 $\braket{\Psi | \Psi}=1$）的集合，如果 $\ket{\Psi^{\prime}}=\xi\ket{\Psi}$（其中 $\xi$ 是满足 $|\xi|=1$ 的任意复数），则 $\ket{\Psi}$ 和 $\ket{\Psi'}$ 属于同一条射线。
+
+    \item[(ii)] 可观测量由\textbf{厄米算符}表示。这些算符是将希尔伯特空间映射到自身的映射 $\ket{\Psi} \rightarrow A\ket{\Psi}$，其线性性体现在：
+        \begin{align}
+            A(\xi\ket{\Psi} + \eta\ket{\Phi}) = \xi A\ket{\Psi} + \eta A\ket{\Phi} \tag{2.1.4}
+        \end{align}
+        并满足实性条件 $A^{\dagger}=A$，其中对于任意线性算符 $A$，其伴随 $A^{\dagger}$ 定义为：
+        \begin{align}
+            \braket{\Phi | A^{\dagger}\Psi} \equiv \braket{A\Phi | \Psi} = \braket{\Psi | A\Phi}^{*}. \tag{2.1.5}
+        \end{align}
+        （这里同样有关于 $A\ket{\Psi}$ 作为 $\ket{\Psi}$ 的函数的连续性等技术性假设。）如果由一条射线 $\mathscr{R}$ 表示的状态，对于由算符 $A$ 表示的可观测量有确定值 $\alpha$，那么属于该射线的态矢 $\ket{\Psi}$ 是 $A$ 的具有本征值 $\alpha$ 的本征矢：
+        \begin{align}
+            A\ket{\Psi} = \alpha\ket{\Psi} \quad \text{对于} \quad \ket{\Psi} \text{ 属于 } \mathscr{R}. \tag{2.1.6}
+        \end{align}
+        一个基本定理告诉我们，对于厄米算符 $A$，$\alpha$ 是实数，并且对应不同 $\alpha$ 的本征矢彼此正交。
+
+    \item[(iii)] 如果一个系统处于由射线 $\mathscr{R}$ 表示的状态，并且进行一个实验来检验它是否处于由彼此正交的射线 $\mathscr{R}_{1}, \mathscr{R}_{2}, \ldots$ 所表示的不同状态中的任何一个（例如，通过测量一个或多个可观测量），那么发现它处于由 $\mathscr{R}_{n}$ 表示的态的概率为：
+        \begin{align}
+            P(\mathscr{R} \rightarrow \mathscr{R}_{n}) = |\braket{\Psi | \Psi_{n}}|^{2}, \tag{2.1.7}
+        \end{align}
+        其中 $\ket{\Psi}$ 和 $\ket{\Psi_{n}}$ 分别是属于射线 $\mathscr{R}$ 和 $\mathscr{R}_{n}$ 的任意态矢。（如果来自两条射线的态矢标量积为零，则称这对射线是正交的。）另一个基本定理给出总概率为 1：
+        \begin{align}
+            \sum_{n} P(\mathscr{R} \rightarrow \mathscr{R}_{n}) = 1 \tag{2.1.8}
+        \end{align}
+        前提是态矢 $\ket{\Psi_{n}}$ 构成一个完备集。
+\end{enumerate}

@@ -1,0 +1,25 @@
+% main.tex
+\documentclass[12pt, a4paper]{book}
+
+% 导言区
+\input{preamble}
+
+\begin{document}
+
+% 信息填充
+\title{Quantum Field Theory}
+\author{Weinberg, SLNALS}
+\date{\today}
+\maketitle
+
+% 目录
+\tableofcontents
+
+% 正文：每一章节都是独立文件
+\input{chapters/chapter1.tex}
+
+% 参考文献
+% \bibliographystyle{plain} % 指定参考文献样式为plain
+% \bibliography{references} % 加载参考文献数据库文件（文件名为references.bib）
+
+\end{document}
