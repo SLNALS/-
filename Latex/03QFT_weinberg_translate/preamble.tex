@@ -1,0 +1,35 @@
+% preamble.tex
+% 字体
+\usepackage{ctex} % 核心：用ctex宏包处理中文 
+% \usepackage{fontspec} % 配置系统字体（XeLatex编译器使用）
+% \setmainfont{SimSun} % 设置中文字体样式
+
+% 数学类宏包
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{braket}
+
+% 版面和图片
+\usepackage{geometry} % 设置页面边距
+\geometry{a4paper, left=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{graphicx}
+\usepackage{float}
+
+% 自定义命令
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+
+% 超链接支持
+\usepackage{hyperref}  % 添加超链接支持
+% hyperref 配置（可选）
+\hypersetup{
+    colorlinks=true,           % 将链接文字显示为彩色，而不是带颜色的方框
+    linkcolor=blue,           % 内部链接（目录、引用等）的颜色
+    citecolor=green,          % 引用链接的颜色
+    filecolor=magenta,        % 文件链接的颜色
+    urlcolor=cyan,            % 网页链接的颜色
+    pdftitle={量子场论},      % PDF 标题
+    pdfauthor={Weinberg},         % PDF 作者
+    pdfsubject={量子场论的中文翻译版本},        % PDF 主题
+    pdfkeywords={量子场论, 物理}  % PDF 关键词
+}
